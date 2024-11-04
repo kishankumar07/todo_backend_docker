@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-backend  # Changed name to match service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todo-backend  # Changed to match service selector
+  template:
+    metadata:
+      labels:
+        app: todo-backend  # Changed to match service selector
+    spec:
+      containers:
+      - name: todo-backend
+        image: todo_backend:latest  # Ensure this matches your Minikube image
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 5001

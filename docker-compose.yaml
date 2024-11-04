@@ -1,0 +1,10 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .   # Path to the Dockerfile directory
+    ports:
+      - "5001:5001"   # Expose the app on port 5001
+    
+
+  
